@@ -745,7 +745,7 @@ header.scrolled {
   flex: 1;
   min-width: 300px;
   background: white;
-  padding: 2rem;
+  padding: 2rem !important;
   border-radius: 10px;
   box-shadow: var(--shadow-sm);
 }
@@ -1080,7 +1080,6 @@ footer {
   /* padding-right: 15px; */
   /* padding-left: 25px; */
   margin-left: 25px;
-
 }
 @media (max-width: 768px) {
   .hero-content {
@@ -1089,46 +1088,65 @@ footer {
 }
 
 @keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 7)); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
 }
 
 .slider {
-	height: 100px;
-	margin: auto;
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-	background: #f9f9f9; /* Optional */
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: #f9f9f9; /* Optional */
 }
 
 .slide-track {
-	display: flex;
-	width: calc(250px * 14);
-	animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+  animation: scroll 40s linear infinite;
 }
 
 .slide {
-	height: 100px;
-	width: 250px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 20px;
-	font-weight: bold;
-	color: #333;
-	background: #fff;
-	border: 1px solid #ddd;
-	box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-	border-radius: 8px;
-	margin: 0 10px;
+  height: 100px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 0 10px;
   padding: 10px;
-
 }
 
 .slide i {
-	margin-right: 10px;
-	color: #dd6ad5; /* Optional: Icon color */
-	font-size: 22px;
+  margin-right: 10px;
+  color: #dd6ad5; /* Optional: Icon color */
+  font-size: 22px;
+}
+/* Tablet view: 2 items per row */
+@media screen and (max-width: 768px) {
+  .custom-portfolio-item {
+    flex: 1 1 50%;
+  }
+}
 
+/* Mobile view: 1 item per row */
+@media screen and (max-width: 568px) {
+  .custom-portfolio-item {
+    flex: 1 1 100%;
+  }
+}
+
+.social_links a i{ 
+  color: black;
 }
